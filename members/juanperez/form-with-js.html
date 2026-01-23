@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form (With JS)</title>
+  <link href="styles.css" rel="stylesheet" >
+</head>
+
+<body>
+  <script>
+      document.documentElement.classList.add('js');
+  </script>
+
+  <main class="contact">
+    
+    <form action="https://httpbin.org/post" method="POST" class="contact-form" novalidate>
+      <input type="hidden" name="possible_bot" value="true">
+
+      <fieldset>
+        <legend>Contact Me</legend>
+
+        <div class="form-field">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter name" minlength="3" maxlength="30" pattern="[A-Za-z ]*" required>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" pattern="^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$" placeholder="Enter email" required>
+        </div>
+
+        <div class="form-field">
+          <label for="comments">Any Comments</label>
+          <textarea id="comments" name="comments" rows="5" placeholder="Enter message" minlength="5" maxlength="250" required></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option value="">Choose one…</option>
+            <option value="general">General question</option>
+            <option value="portfolio">Portfolio feedback</option>
+            <option value="collab">Collaboration</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <input type="hidden" id="form-errors" name="form-errors" value="">
+
+      <button type="submit">Send</button>
+
+      <output id="error-message" class="output" aria-live="polite"></output>
+      <output id="info-message" class="output" aria-live="polite"></output>
+    </form>
+  </main>
+  
+  <footer>
+    <section class="switch">
+      <label class="theme-switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+      </label>
+    </section>
+  </footer>
+
+  <script src="form-with-js.js"></script>
+  <script src="theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | My Portfolio</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        @view-transition {
+            navigation: auto;
+        }
+        main {
+            view-transition-name: page;
+        }
+        ::view-transition-old(page) {
+            animation: slide-out-left 0.5s ease forwards;
+        }
+        ::view-transition-new(page) {
+            animation: slide-in-right 0.5s ease forwards;
+        }
+        @keyframes slide-out-left {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-100%); }
+        }
+        @keyframes slide-in-right {
+            from { transform: translateX(100%); }
+            to   { transform: translateX(0); }
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        document.documentElement.classList.add('js');
+    </script>
+
+    <header id="nav-bar">
+        <nav>
+            <input type="checkbox" id="menu">
+            <p id="logo">
+                <a href="index.html">Juan Perez</a>
+                <label for="menu"></label>
+            </p>
+            <ul class="items">
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <!-- <li><a href="achievements.html">Achievements</a></li> -->
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Intro page content -->
+    <main id ="intro-layout">
+        <section id="intro">
+            <picture id="profile-image">
+                <source srcset="about-image.JPG" media="(max-width: 100px)">
+                <img src="about-image1.JPG" alt="Photo of Me">
+            </picture>            
+        
+            <h1 id="message">
+                Hello, my name is <span>Juan Perez</span>. Above, you can check out what I work on and what I love doing.
+            </h1>
+        </section>
+    </main>
+      
+
+    <!-- Hello World custom element-->
+    <hello-world></hello-world>
+
+    <script>
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                super();
+                console.log("Hello world!");
+            }
+        }
+        customElements.define('hello-world', HelloWorld);
+    </script>
+<!-- 
+    <noscript>
+        <p>Certain script type on page is not supported</p>
+    </noscript> -->
+
+    <footer>
+        <section class="switch">
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </section>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script>
+        const menuCheckbox = document.getElementById("menu");
+
+        menuCheckbox.addEventListener("change", () => {
+            document.documentElement.classList.toggle("menu-open", menuCheckbox.checked);
+        });
+    </script>
+
+    <!-- <script src="transition.js"></script> -->
+
+
+</body>
+</html>
+
+
+</body>
+</html>

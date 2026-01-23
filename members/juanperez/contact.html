@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+      @view-transition {
+          navigation: auto;
+      }
+      main {
+          view-transition-name: page;
+      }
+      ::view-transition-old(page) {
+          animation: slide-out-left 0.5s ease forwards;
+      }
+      ::view-transition-new(page) {
+          animation: slide-in-right 0.5s ease forwards;
+      }
+      @keyframes slide-out-left {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-100%); }
+      }
+      @keyframes slide-in-right {
+          from { transform: translateX(100%); }
+          to   { transform: translateX(0); }
+      }
+  </style>
+</head>
+
+<body>
+  <script>
+      document.documentElement.classList.add('js');
+  </script>
+
+  <header id="nav-bar">
+    <nav>
+        <input type="checkbox" id="menu">
+        <p id="logo">
+            <a href="index.html">Juan Perez</a>
+            <label for="menu"></label>
+        </p>
+        <ul class="items">
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <!-- <li><a href="achievements.html">Achievements</a></li> -->
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="contact">
+        <header>
+          <h1 class="content-title">Let's Connect</h1>
+          <h2>Feel free to contact me for any questions or collaborations. Thanks for checking my website out!</h2>
+        </header>
+
+        <picture>
+            <source srcset="images/me2.jpg" media="(max-width: 100px)">
+            <img src="contact-image.JPG" alt="Photo of Me">
+        </picture>
+
+        <button id="open-dialog">Contact Me</button>
+
+        <dialog id="contact-dialog">
+          <form method="dialog" class="contact-form">
+            <fieldset class="contact-field">
+              <legend>Send a Message</legend>
+
+              <div class="form-field">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter name">
+              </div>
+
+              <div class="form-field">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter email">         
+              </div>
+      
+              <div class="form-field">
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" cols="30" placeholder="Enter message"></textarea>
+              </div>
+            </fieldset>
+            <div class="buttons">
+              <button type="submit">Send</button>
+              <button type="button" id="close-dialog">Cancel</button>  
+            </div>
+          </form>
+        </dialog>
+
+    </section>
+  </main>
+
+  <footer>
+    <section id="contact-footer">
+      <p>Juan Perez</p>
+      <nav>
+        <ul>
+          <li><a href="tel:+12132655895"><span class="material-icons">phone</span></a></li>
+          <li><a href="mailto:juanph.1404@gmail.com"><span class="material-icons">mail</span></a></li>
+          <li><a href="https://www.linkedin.com/in/juan-perez-1a2382391" target="_blank"><span class="material-icons">badge</span>></a></li>
+          <li><a href="https://github.com/juan1410" target="_blank"><span class="material-icons">code</span></a></li>
+          <li><a href="https://instagram.com/juan.p_14" target="_blank"><span class="material-icons">photo_camera</span></a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="switch">
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+    </section>
+  </footer>
+
+  <script src="theme.js"></script>
+  <script>
+      const menuCheckbox = document.getElementById("menu");
+
+      menuCheckbox.addEventListener("change", () => {
+          document.documentElement.classList.toggle("menu-open", menuCheckbox.checked);
+      });
+  </script>
+ac
+  <script>
+      const dialog = document.getElementById("contact-dialog");
+      const openButton = document.getElementById("open-dialog");
+      const closeButton = document.getElementById("close-dialog");
+
+      openButton.addEventListener("click", () => dialog.showModal());
+      closeButton.addEventListener("click", () => dialog.close());
+  </script>
+  
+</body>
+</html>

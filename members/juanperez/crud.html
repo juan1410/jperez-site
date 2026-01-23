@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="crud-page">
+        <h1 class="content-title">Managing Projects</h1>
+
+        <a href="projects.html">Link to Projects</a>
+
+        <section class="crud-section">
+            <form id="create-form">
+                <fieldset>
+                    <legend>Create Project</legend>
+
+                    <div class="form-field">
+                        <label for="create-title">Title</label>
+                        <input type="text" placeholder="Enter Title" id="create-title" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="create-image">Image URL</label>
+                        <input type="text" placeholder="Enter URL" id="create-image" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="create-alt">Alt Text</label>
+                        <input type="text" placeholder="Enter Alt Text" id="create-alt">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="create-description">Description</label>
+                        <textarea id="create-description" rows="5" placeholder="Enter Description" minlength="5" maxlength="250" required></textarea>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="create-link">Project Link</label>
+                        <input type="url" placeholder="Include Link" id="create-link" required>
+                    </div>
+                </fieldset>
+                <button type="submit">Create</button>
+            </form>
+        </section> 
+
+        <section class="crud-section">
+            <form id="update-form">
+                <fieldset>
+                    <legend>Update Project</legend>
+
+                    <div class="form-field">
+                        <label for="update-index">Project Index</label>
+                        <input type="number" placeholder="Enter Index of which to update" id="update-index" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="update-title">Title</label>
+                        <input type="text" placeholder="New Title" id="update-title" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="update-image">Image URL</label>
+                        <input type="text" placeholder="New Image URL" id="update-image" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="update-alt">Alt Text</label>
+                        <input type="text" placeholder="New Alt Text" id="udpate-alt">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="update-description">Description</label>
+                        <textarea id="update-description" rows="5" placeholder="New Description" minlength="5" maxlength="250" required></textarea>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="update-link">Project Link</label>
+                        <input type="url" placeholder="Include Link" id="update-link" required>
+                    </div>
+                </fieldset>
+                <button type="submit">Update</button>
+            </form>
+        </section>
+
+        <section class="crud-section">
+            <form id="delete-form">
+                <fieldset>
+                    <legend>Delete Project</legend>
+
+                    <div class="form-field">
+                        <label for="delete-index">Project Index</label>
+                        <input type="number" placeholder="Enter Index of which to delete" id="delete-index" required>
+                    </div>
+                </fieldset>
+                <button type="submit">Delete</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="crud.js"></script>
+</body>
+</html>

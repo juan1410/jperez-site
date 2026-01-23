@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /members/juanperez/crud.html

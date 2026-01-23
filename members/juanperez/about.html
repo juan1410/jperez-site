@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        @view-transition {
+            navigation: auto;
+        }
+        main {
+            view-transition-name: page;
+        }
+        ::view-transition-old(page) {
+            animation: slide-out-left 0.5s ease forwards;
+        }
+        ::view-transition-new(page) {
+            animation: slide-in-right 0.5s ease forwards;
+        }
+        @keyframes slide-out-left {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-100%); }
+        }
+        @keyframes slide-in-right {
+            from { transform: translateX(100%); }
+            to   { transform: translateX(0); }
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        document.documentElement.classList.add('js');
+    </script>
+
+    <header id="nav-bar">
+        <nav>
+            <input type="checkbox" id="menu">
+            <p id="logo">
+                <a href="index.html">Juan Perez</a>
+                <label for="menu"></label>
+            </p>
+            <ul class="items">
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <!-- <li><a href="achievements.html">Achievements</a></li> -->
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <header>
+                <h1 class="content-title">About Me</h1>
+                <!-- <hr> -->
+            </header>
+
+            <figure id = "about-image">
+                <figcaption>Building, learning, and creating one project at a time.</figcaption>
+                <picture>
+                    <source srcset="images/about1.jpg" media="(max-width: 100px)">
+                    <img src="image2.jpeg" alt="Picture of Me">
+                </picture>            
+            </figure>
+
+            <profile-card>
+                <h2>Hello, I'm Juan Perez</h2>
+                <p>
+                    Welcome to my Portfolio! I’m someone who enjoys turning ideas into real, functional projects. I love working on websites, experimenting with new tools, and learning how technology can improve everyday experiences. 
+                    Outside of coding, I’m always exploring new skills and challenging myself with creative projects. I also love going on hikes and enjoy playing soccer and going to the gym.
+                </p>
+            </profile-card>
+
+        </section>
+    </main>
+
+
+    <footer>
+        <section class="switch">
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </section>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script>
+        const menuCheckbox = document.getElementById("menu");
+
+        menuCheckbox.addEventListener("change", () => {
+            document.documentElement.classList.toggle("menu-open", menuCheckbox.checked);
+        });
+    </script>
+</body>
+</html>

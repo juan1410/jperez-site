@@ -1,0 +1,85 @@
+body{
+    color: white;
+    background: forestgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+header{
+    /* background: green; */
+    display: flex;
+    margin: 0;
+    padding: 0;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+#title{
+    text-align: center;
+    /* background: red; */
+    padding-left: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+#title h1,
+#title h2{
+    font-size: 50px;
+    /* background: red; */
+    margin: 1rem;
+}
+#team{
+    border-radius: 3rem;
+    padding: 1rem;
+    margin: 1rem;
+    color: grey;
+    background: beige;
+    display: flex;
+    flex-direction: column;
+}
+#team h2{
+    text-align: center;
+}
+#members{
+    margin-top: 0;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+}
+main{
+    /* background: red; */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* margin: 1rem; */
+    padding: 1rem;
+}
+.hw{
+    /* background: green; */
+    display: flex;
+    flex-direction: column;
+}
+.hw h3{
+    /* background: purple; */
+    margin: 0;
+}
+.hwlinks{
+    color: grey;
+    background: beige;
+    border-radius: 0.5rem;
+    /* margin: 1rem; */
+    padding: 1rem;
+}
+.hwlinks li{
+    margin-left: 1rem;
+}
+footer{
+    /* background: blue; */
+    display: flex;
+    justify-content: center;
+}
