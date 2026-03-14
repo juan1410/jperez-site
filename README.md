@@ -14,7 +14,7 @@ This project was built with some assistance of AI. AI was used for:
 - Generating some SQL queries
 - Debugging the chart and table rendering logic in JavaScript
 
-**Observations on AI value:** AI was highly effective at debugging and finding repetitive JS render functions. However, it did require careful review of every output, particularly around security-sensitive code like authentication and session handling.
+**Observations on AI value:** AI was effective at debugging and finding repetitive JS render functions. However, it did require careful review of every output, particularly around security-sensitive code like authentication and session handling.
 
 ## Architecture
 ```
