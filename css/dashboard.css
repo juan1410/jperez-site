@@ -1,0 +1,359 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg:         #f4f5f7;
+    --surface:    #ffffff;
+    --surface2:   #f0f1f3;
+    --border:     #e2e4e9;
+    --accent:     #f59e0b;
+    --accent-dim: rgba(245,158,11,0.1);
+    --accent2:    #ef4444;
+    --green:      #10b981;
+    --blue:       #3b82f6;
+    --text:       #111827;
+    --muted:      #6b7280;
+    --font-head:  sans-serif;
+    --font-body:  sans-serif;
+    --radius:     10px;
+    --header-h:   58px;
+}
+
+body {
+    font-family: sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    grid-template-rows: var(--header-h) 1fr;
+    grid-template-areas:
+        "header  header"
+        "sidebar content";
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    grid-area: header;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.dashboard-header h1 {
+    font-family: var(--font-head);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-right: auto;
+}
+
+#logout-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#logout-btn:hover {
+    border-color: var(--accent2);
+    color: var(--accent2);
+    background: rgba(239,68,68,0.05);
+    transform: none;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 16px 10px;
+    gap: 2px;
+    position: sticky;
+    top: var(--header-h);
+    height: calc(100vh - var(--header-h));
+    overflow-y: auto;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    padding: 9px 12px;
+    border-radius: 8px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all 0.12s ease;
+}
+
+.sidebar a:hover {
+    background-color: var(--surface2);
+    color: var(--text);
+}
+
+.sidebar a.active {
+    background: var(--accent-dim);
+    color: #b45309;
+    font-weight: bold;
+}
+
+.main-content {
+    grid-area: content;
+    padding: 28px 32px;
+    background: var(--bg);
+    overflow-y: auto;
+}
+
+#content {
+    width: 100%;
+    max-width: 1100px;
+}
+
+h2 {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+h3 {
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 20px 0 10px;
+}
+
+.metric-card{
+    background:#fff;
+    border-radius:8px;
+    padding:20px;
+    box-shadow:0 1px 4px rgba(0,0,0,0.1);
+    border-top:4px solid black;
+}
+
+.metric-card-header{
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.metric-card-data{
+    font-size:32px;
+    font-weight:bold;
+    color:#2c3e50;
+}
+
+.metric-card-subtitle{
+    font-size:11px;
+    color:#aaa;
+    margin-top:4px
+}
+
+.report-card{
+    padding:14px;
+    margin:8px 0;
+    background-color:#f8f9fa;
+    border-radius:6px;
+    border-left:4px solid #3498db;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+#error-table{
+    background:#fff3f3;
+    white-space:pre-wrap;
+    font-family:monospace;
+    font-size:12px;
+    padding:8px;
+}
+
+#overview-p{
+    color:#888;
+    margin-bottom:24px;
+}
+
+p {
+    color: var(--muted);
+    font-size: 13.5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 16px;
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+thead tr {
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    padding: 10px 14px;
+    text-align: left;
+    font-family: monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background: #fafbfc;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="password"],
+select {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input[type="date"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(245,158,11,0.15);
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accent);
+}
+
+label {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+button:hover {
+    filter: brightness(1.08);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Export PDF button */
+button[id="export-btn"] {
+    margin-left: 8px;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+}
+
+/* Save report buttons */
+button[id="save-report-btn"],
+button[id="error-save-btn"],
+button[id="behav-save-btn"] {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+}
+
+button[id="save-report-btn"]:hover,
+button[id="error-save-btn"]:hover,
+button[id="behav-save-btn"]:hover {
+    border-color: var(--green);
+    color: var(--green);
+    background: rgba(16,185,129,0.05);
+}
+
+/* Delete buttons */
+button[id='delete-btn']{
+    background-color:#e74c3c;
+    color:#fff;
+    border:none;
+    padding:8px 12px;
+    border-radius:4px;
+}
+
+/* Back button */
+button[onclick] {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+
+button[onclick]:hover {
+    background: var(--surface2);
+    color: var(--text);
+    filter: none;
+}
+
+@media (max-width: 768px) {
+    .dashboard-layout {
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar { 
+        display: none; 
+    }
+    .main-content { 
+        padding: 16px; 
+    }
+}

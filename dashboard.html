@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <noscript>
+        <div style="text-align:center;padding:60px 20px;font-family:sans-serif;">
+            <h2>JavaScript Required</h2>
+            <p>This dashboard requires JavaScript to function. Please enable JavaScript in your browser and refresh the page.</p>
+        </div>
+    </noscript>
+    <div class="dashboard-layout">
+        <header class="dashboard-header">
+            <h1>Analytics Dashboard</h1>
+            <span id="user-display" style="font-size:13px;color:var(--muted);margin-right:auto;margin-left:12px;"></span>
+            <button id="logout-btn">LogOut</button>
+        </header>
+        <nav class="sidebar">
+            <a href="#/overview" class="active">Overview</a>
+            <a href="#/reports">Reports</a>
+        </nav>
+        <main class="main-content">
+            <button id="create-report-btn" style="display: none">Create Report</button>
+            <div id="content"></div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
