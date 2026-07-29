@@ -7,6 +7,7 @@
 
 ## Project Overview
 An analytics dashboard built with JavaScript (frontend) and PHP (backend), backed by a MySQL database. The dashboard visualizes data collected by a custom `collector.js` script running on a test site, providing report for different categories.
+
 Demo: username: analyst2 / password: analyst123
 
 ## Use of AI
